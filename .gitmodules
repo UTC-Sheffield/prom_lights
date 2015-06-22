@@ -1,0 +1,9 @@
+[submodule "BiblioPixel"]
+	path = BiblioPixel
+	url = https://github.com/ManiacalLabs/BiblioPixel.git
+[submodule "py-spidev"]
+	path = py-spidev
+	url = https://github.com/doceme/py-spidev.git
+[submodule "BiblioPixelAnimations"]
+	path = BiblioPixelAnimations
+	url = https://github.com/ManiacalLabs/BiblioPixelAnimations.git
