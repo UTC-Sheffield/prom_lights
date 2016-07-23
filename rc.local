@@ -1,0 +1,27 @@
+#!/bin/sh -e
+#
+# rc.local
+#
+# This script is executed at the end of each multiuser runlevel.
+# Make sure that the script will "exit 0" on success or any other
+# value on error.
+#
+# In order to enable or disable this script just change the execution
+# bits.
+#
+# By default this script does nothing.
+
+
+# Print the IP address
+_IP=$(hostname -I) || true
+if [ "$_IP" ]; then
+  printf "My IP address is %s\n" "$_IP"
+fi
+
+sudo /home/pi/prom_lights/unicorn2.py -b 0.1 -c 255,187,42 -g 15,106,1 -f 1  " Summer Lights" -fps 12 &
+#sudo /home/pi/prom_lights/unicorn.py -b 0.1 &
+#sudo /home/pi/prom_lights/unicorn-text.py -b 0.1 -c 255,187,42 -g 15,106,1 -f 1  "Summer Lights in Aid Of Macmillan" -fps 10
+#sudo python /home/pi/prom_lights/party.py -r & # runs the long strips
+
+
+exit 0
